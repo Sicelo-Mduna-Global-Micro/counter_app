@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 class Counter extends Component {
     state = { 
-        count : 0
+        value : this.props.value
 
      };
 
     getBadgeClasses() {
         let classes = 'badge m-2 badge-';
-        if(this.state.count === 0){
-            classes += 'warning';
+        if(this.state.value === 0){
+            classes += 'warning'; 
         }
 
         else{
@@ -20,14 +20,14 @@ class Counter extends Component {
     }
 
     handleIncrement = () =>{
-        this.setState({count : this.state.count + 1});
+        this.setState({value : this.state.value + 1});
 
     }
 
 
 
      
-    render() { 
+    render() {
         return (
             <>
                 <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
@@ -37,12 +37,12 @@ class Counter extends Component {
     }
 
     formatCount(){
-        const {count} = this.state;
-        if(count === 0){
+        const {value} = this.state;
+        if(value === 0){
             return("Zero")
         }
-        else if(count > 0){
-            return(count)
+        else if(value > 0){
+            return(value)
         }
 
         else{
