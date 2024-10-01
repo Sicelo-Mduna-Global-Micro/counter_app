@@ -24,6 +24,10 @@ class Counter extends Component {
 
     }
 
+    handleDelete = () =>{
+
+    }
+
 
 
      
@@ -31,7 +35,9 @@ class Counter extends Component {
         return (
             <>
                 <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-                <button onClick = {this.handleIncrement} className='btn btn-secondary btn-sm'>Increment</button><br></br>
+                <button onClick = {this.handleIncrement} className='btn btn-secondary btn-sm'>Increment</button>
+                <button onClick = {this.props.onDelete}  className='btn btn-danger btn-sm m-2'>Delete</button>
+                <br></br>
             </>
         );
     }
